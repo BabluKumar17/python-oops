@@ -3,27 +3,30 @@
 #Method: a function that is associated with a class.
 
 class Employee:
-	pass
+	# constructor
+	def __init__(self, first, last, pay):
+		self.first = first
+		self.last = last
+		self.pay = pay
+		self.email = first + '.' + last + '@company.com'
+	
+	def fullname(self):
+		return '{} {}'.format(self.first, self.last)
+
 
 # Instance of Employee class
-emp_1 = Employee()
+emp_1 = Employee("Bablu", "Kumar", 50000)
 # Another different instance of Employee class
-emp_2 = Employee()
-
-# Let's add few attributes to the class
-emp_1.first = "Bablu"
-emp_1.last = "Kumar"
-emp_1.email = "hacback17@yahoo.com"
-emp_1.pay = 50000
-
-emp_2.first = "Amit"
-emp_2.last = "Sharma"
-emp_2.email = "amit17@yahoo.com"
-emp_2.pay = 60000
+emp_2 = Employee("Amit", "Sharma", 60000)
 
 print(emp_1.email)		# hacback17@yahoo.com
 print(emp_2.email)		# amit17@yahoo.com
+print(emp_1 == emp_2)   # False
 
-print(emp_1 == emp_2)  # False
+print(emp_1.fullname())	# Bablu Kumar
+
+print(emp_2.fullname())	# Amit Sharma
+
+
 
 
