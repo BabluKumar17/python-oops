@@ -1,10 +1,7 @@
-## Python Object-Oriented Programming - 2
+# Python OOP
 
-#Method: a function that is associated with a class.
+# Difference b/w regular methods, class methods and static methods
 
-# Class variable: class variables are the variables that are shared among all instances of a class.
-# In Java, we use static keyword to show a class variable. 
-# It does not belong to an instance of a class.
 
 class Employee:
 
@@ -20,32 +17,32 @@ class Employee:
 
 		Employee.num_of_emps += 1
 	
+	# a regular method
 	def fullname(self):
 		return '{} {}'.format(self.first, self.last)
 
+	# a regular method
 	def apply_raise(self):
 		self.pay = int(self.pay * self.raise_amount)
 
+	# a class method
+	@classmethod
+	def set_raise_amt(cls, amount):
+		cls.raise_amount = amount
 
-###########################################################
+
+##########################################################
 print(Employee.num_of_emps)
 
 # Instance of Employee class
 emp_1 = Employee("Bablu", "Kumar", 50000)
 emp_2 = Employee("Amit", "Sharma", 60000)
 
+# set another amout to raise_amt
+Employee.set_raise_amt(1.05)
 
-# Let's look at what is contained inside a class
-#print(Employee.__dict__) 
 
-# Now look at what is contained inside an instance
-#print(emp_1.__dict__)
-
-#print(emp_2.__dict__)
-
-print(Employee.num_of_emps)
+print(Employee.raise_amount)
+print(emp_1.raise_amount)
+print(emp_2.raise_amount)
 ###########################################################
-
-
-
-
