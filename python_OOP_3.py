@@ -23,10 +23,13 @@ print(emp_1.email)		# hacback17@yahoo.com
 print(emp_2.email)		# amit17@yahoo.com
 print(emp_1 == emp_2)   # False
 
+
+######################################
 print(emp_1.fullname())	# Bablu Kumar
 
 print(emp_2.fullname())	# Amit Sharma
 
+print(Employee.fullname(emp_1))   # Bablu Kumar
 
-
-
+print(Employee.fullname(emp_2))	  # Amit Sharma
+######################################
