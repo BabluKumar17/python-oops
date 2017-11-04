@@ -34,6 +34,15 @@ class Employee:
 	def from_string(cls, emp_str):
 		first, last, pay = emp_str.split('-')
 		return cls(first, last, pay)
+	
+	# static method does not take "cls" or "self". 
+	# It has no connection with the instance variables or anything unlike "a class method" and "a regular class"
+	@staticmethod
+	def is_workday(day):
+		if day.weekday() == 5 or day.weekday() == 6:
+			return 'No!'
+		return 'Yes!'
+
 
 
 ##########################################################
@@ -62,3 +71,11 @@ print(new_emp_1.pay)
 
 # total number of employee
 print(Employee.num_of_emps)  # 3
+###########################################################
+
+import datetime
+
+my_date = datetime.date(2017,11,5)
+
+print(Employee.is_workday(my_date))  # No
+###########################################################
